@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Auditor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>AI Website <span>Auditor</span></h1>
+            <p>Get instant SEO & UX insights powered by Gemini</p>
+        </header>
+
+        <section class="search-section glass">
+            <form id="auditForm">
+                <input type="url" id="urlInput" placeholder="https://example.com" required>
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Audit Now</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </form>
+            <div id="errorBox" class="error-box hidden"></div>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <div class="metrics-grid">
+                <div class="metric-card glass">
+                    <h3>Words</h3>
+                    <p id="wordCount">0</p>
+                </div>
+                <div class="metric-card glass">
+                    <h3>Links</h3>
+                    <p id="linkCount">0</p>
+                    <small><span id="internalLinks">0</span> int / <span id="externalLinks">0</span> ext</small>
+                </div>
+                <div class="metric-card glass">
+                    <h3>Images</h3>
+                    <p id="imageCount">0</p>
+                    <small><span id="imagesMissingAltPct">0</span>% missing alt (<span
+                            id="imagesMissingAlt">0</span>)</small>
+                </div>
+                <div class="metric-card glass" style="padding-bottom: 1rem;">
+                    <h3>Tags</h3>
+                    <p id="hCount" style="font-size: 1.5rem; margin-top: 5px;">
+                        H1: <span id="h1Count">0</span><br>
+                        H2: <span id="h2Count">0</span><br>
+                        H3: <span id="h3Count">0</span>
+                    </p>
+                </div>
+                <div class="metric-card glass">
+                    <h3>CTAs</h3>
+                    <p id="ctaCount">0</p>
+                    <small>Call to Actions</small>
+                </div>
+            </div>
+
+            <div class="meta-card glass" style="margin-bottom: 2rem; animation: fadeInUp 0.8s ease 0.1s both;">
+                <h3
+                    style="color: var(--text-sec); margin-bottom: 1rem; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px;">
+                    Meta Information</h3>
+                <p style="margin-bottom: 0.5rem; line-height: 1.4;"><strong>Title:</strong> <span id="metaTitle"
+                        style="color: var(--accent);">N/A</span></p>
+                <p style="line-height: 1.4;"><strong>Description:</strong> <span id="metaDesc"
+                        style="color: var(--accent);">N/A</span></p>
+            </div>
+
+            <div class="ai-insights-card glass">
+                <h2>Gemini AI Insights</h2>
+                <div id="aiInsightsContent" class="insights-content">
+                    <div class="loading-pulse">Thinking...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Copyright Footer -->
+        <footer>
+            <p>Developed by <span>Vethum Hewage</span> &copy; 2026</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
